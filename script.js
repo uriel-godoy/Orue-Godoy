@@ -147,17 +147,20 @@ document.querySelectorAll(".whatsapp-btn").forEach((btn) => {
 
     switch (service) {
       case "Producción":
-        phoneNumber = "5493525534813" // Replace with actual number
+        phoneNumber = "5493511234567" // <-- Reemplaza con el número de WhatsApp de Producción (ej: +5493511234567)
         message = "Hola, necesito información sobre seguros."
         break
       case "Siniestros":
-        phoneNumber = "5493525516344" // Replace with actual number
+        phoneNumber = "5493517654321" // <-- Reemplaza con el número de WhatsApp de Siniestros
         message = "Hola, necesito reportar un siniestro."
         break
       case "Cobranzas":
-        phoneNumber = "5493525534843" // Replace with actual number
+        phoneNumber = "5493519876543" // <-- Reemplaza con el número de WhatsApp de Cobranzas
         message = "Hola, tengo una consulta sobre cobranzas."
         break
+      default:
+        phoneNumber = "5493510000000" // Número por defecto si no coincide
+        message = "Hola, tengo una consulta general."
     }
 
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
@@ -165,9 +168,9 @@ document.querySelectorAll(".whatsapp-btn").forEach((btn) => {
   })
 })
 
-// Call button functionality
+// Call button functionality (for "Llamar a la grúa")
 document.querySelector(".call-btn")?.addEventListener("click", () => {
-  const phoneNumber = "5493516123456" // Replace with actual grúa number
+  const phoneNumber = "5493511122334" // <-- Reemplaza con el número de WhatsApp de la grúa
   const message = "Necesito servicio de grúa urgente."
   const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
   window.open(whatsappUrl, "_blank")
@@ -185,7 +188,7 @@ document.querySelectorAll(".cancellation-option button").forEach((btn) => {
     const isArrepentimiento = e.target.textContent.includes("arrepentimiento")
     const message = isArrepentimiento ? "Quiero ejercer mi derecho de arrepentimiento." : "Quiero cancelar mi póliza."
 
-    const phoneNumber = "5493516123456" // Replace with actual number
+    const phoneNumber = "5493515555555" // <-- Reemplaza con el número de WhatsApp para cancelaciones/arrepentimiento
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   })
@@ -196,7 +199,7 @@ document.querySelectorAll(".insurance-card").forEach((card) => {
   card.addEventListener("click", () => {
     const insuranceType = card.querySelector("h3").textContent
     const message = `Hola, me interesa el seguro de ${insuranceType}. ¿Podrían darme más información?`
-    const phoneNumber = "5493516123456" // Replace with actual number
+    const phoneNumber = "5493516666666" // <-- Reemplaza con el número de WhatsApp para consultas de seguros
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   })
@@ -207,7 +210,7 @@ document.querySelectorAll(".vehicle-icon").forEach((icon) => {
   icon.addEventListener("click", () => {
     const vehicleType = icon.querySelector("img").alt
     const message = `Hola, quiero cotizar un seguro para ${vehicleType}.`
-    const phoneNumber = "5493516123456" // Replace with actual number
+    const phoneNumber = "5493517777777" // <-- Reemplaza con el número de WhatsApp para cotizaciones de vehículos
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   })
@@ -221,7 +224,7 @@ document.querySelectorAll(".hero-buttons .btn").forEach((btn) => {
       ? "Hola, quiero cotizar seguros."
       : "Hola, quiero que me llamen para información sobre seguros."
 
-    const phoneNumber = "5493516123456" // Replace with actual number
+    const phoneNumber = "5493518888888" // <-- Reemplaza con el número de WhatsApp para botones del hero
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`
     window.open(whatsappUrl, "_blank")
   })
